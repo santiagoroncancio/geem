@@ -15,6 +15,8 @@ class CreateRecordsTable extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('product_id')->constrained('products');
+            $table->foreignId('client_id')->constrained('users');
             $table->timestamps();
         });
     }

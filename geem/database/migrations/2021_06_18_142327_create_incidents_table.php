@@ -19,6 +19,10 @@ class CreateIncidentsTable extends Migration
             $table->time('check_in_time');
             $table->text('evaluation');
             $table->text('report_client');
+            $table->foreignId('record_id')->constrained('records');
+            $table->foreignId('helper_id')->constrained('users');
+            $table->foreignId('state_id')->constrained('states');
+            $table->foreignId('type_service_id')->constrained('type_services');
             $table->timestamps();
         });
     }

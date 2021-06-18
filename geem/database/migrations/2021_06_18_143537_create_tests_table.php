@@ -18,6 +18,7 @@ class CreateTestsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->text('results');
+            $table->foreignId('repair_id')->constrained('repairs');
             $table->timestamps();
         });
     }

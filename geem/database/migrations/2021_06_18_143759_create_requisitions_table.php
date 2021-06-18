@@ -18,6 +18,8 @@ class CreateRequisitionsTable extends Migration
             $table->integer('quantity');
             $table->string('unit');
             $table->date('creation_date');
+            $table->foreignId('spare_part_id')->constrained('spare_parts');
+            $table->foreignId('diagnostic_id')->constrained('diagnostics');
             $table->timestamps();
         });
     }

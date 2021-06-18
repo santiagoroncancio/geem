@@ -19,6 +19,8 @@ class CreateRepairsTable extends Migration
             $table->time('check_in_time');
             $table->time('check_out_time');
             $table->text('description');
+            $table->foreignId('diagnostic_id')->constrained('diagnostics');
+            $table->foreignId('tecnical_id')->constrained('users');
             $table->timestamps();
         });
     }

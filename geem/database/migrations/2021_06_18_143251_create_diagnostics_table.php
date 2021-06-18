@@ -19,6 +19,8 @@ class CreateDiagnosticsTable extends Migration
             $table->time('check_in_time');
             $table->time('check_out_time');
             $table->text('description');
+            $table->foreignId('tecnical_id')->constrained('users');
+            $table->foreignId('incident_id')->constrained('incidents');
             $table->timestamps();
         });
     }
