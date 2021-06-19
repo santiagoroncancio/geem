@@ -7,14 +7,14 @@ use App\Models\Incident;
 use App\Models\Rol;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class diagnosticFactory extends Factory
+class DiagnosticFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = diagnostic::class;
+    protected $model = Diagnostic::class;
 
     /**
      * Define the model's default state.
