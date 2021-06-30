@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Diagnostic;
 use App\Models\Incident;
-use App\Models\invoice;
+use App\Models\Invoice;
 use App\Models\Product;
 use App\Models\Record;
 use App\Models\Repair;
@@ -52,7 +52,6 @@ class DatabaseSeeder extends Seeder
         // Datos para crear usuarios
         User::create(['type_document'=>'CC','document'=>'12345678','email'=>'i@admin.com','password'=>Hash::make('123'),'name'=>'admin','lastname'=>'admin2','phone'=>'3123121232','rol_id'=>'1']);
 
-
         // Datos generados con la libreria faker
         Product::factory(30)->create();
 
@@ -72,6 +71,6 @@ class DatabaseSeeder extends Seeder
 
         Test::factory(30)->create();
 
-        invoice::factory(30)->create();
+        Invoice::factory(30)->create();
     }
 }
