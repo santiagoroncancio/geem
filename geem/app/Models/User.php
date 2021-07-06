@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+use Tymon\JWTAuth\Contracts\JWTSubject;
+
+class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
 
@@ -24,7 +26,8 @@ class User extends Authenticatable
         'name',
         'lastname',
         'phone',
-        'city'
+        'city',
+        'rol_id'
     ];
 
     /**
@@ -46,6 +49,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // Metodos de autenticación por tokens 
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+
+    // Relaciones db
     public function records()
     {
         return $this->hasMany(Record::class);
@@ -75,5 +90,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(Invoice::class);
     }
-
 }

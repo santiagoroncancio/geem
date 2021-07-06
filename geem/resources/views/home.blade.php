@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <user-component></user-component>
+    <user-crud> </user-crud>
+
+    <user-index></user-index>    
 @endsection
