@@ -69,10 +69,4 @@
             }
         }
     }
-
 </script>
-
-'type_document',
-'document',
-'email',
-'password',
