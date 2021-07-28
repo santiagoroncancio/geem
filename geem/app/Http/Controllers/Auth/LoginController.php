@@ -49,14 +49,12 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
         try {
             if (! $token = JWTAuth::attempt($credentials)) {
-                return response()->json(['error' => 'invalid_credentials'], 400);
+                return response()->json(['status' => 'Error']);
             }
         } catch (JWTException $e) {
-            return response()->json(['error' => 'could_not_create_token'], 500);
+            return response()->json(['status' => 'Error']);
         }
-        // return response()->json(compact('token'));
-        
         $request->session()->put(['token'=>$token]);
-        return redirect('/dashboard');
+        return response()->json(['status'=>'success','data'=>$token]);
     }
 }

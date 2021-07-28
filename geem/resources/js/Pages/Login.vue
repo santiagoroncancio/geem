@@ -7,7 +7,7 @@
                         <h2 class="text-center">Login</h2>
                     </div>
                     <div class="card-body">
-                        <div class="form">
+                        <form v-on:submit.prevent="onLogin">
                             <div class="form-group">
                                 <label for="email">Correo eletronico</label>
                                 <input type="email" name="email" id="email" class="form-control" v-model="user.email">
@@ -16,8 +16,8 @@
                                 <label for="password">Contraseña</label>
                                 <input type="password" name="pass" id="password" class="form-control" v-model="user.password">
                             </div>
-                            <input type="submit" value="Ingresar" class="btn btn-success btn-lg" @click="onLogin()">
-                        </div> 
+                            <input type="submit" value="Ingresar" class="btn btn-success btn-lg">
+                        </form>
                     </div>
                 </div>
             </div>
@@ -33,10 +33,11 @@
             }
         },
         methods: {
-            onLogin(){
-                console.log('Bienvenido');
-                const send = axios.post('/api/login', this.user);
-                console.log("user "+ this.user.email);
+            async onLogin(){
+                const send = await axios.post('/api/login', this.user);
+                if(send.data.status=="success"){
+                    this.$router.push('/user')
+                }
             }
         },
         created() {
