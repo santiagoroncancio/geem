@@ -1,6 +1,7 @@
 <template>
     <nav class="navBar">
         <ul class="navBar__link">
+            <li><router-link :to="{name: 'login'}">Login</router-link></li>
             <li><router-link :to="{ name:'home'}">Home</router-link></li>
             <li><router-link :to="{ name:'user'}">User</router-link></li>
             <li><router-link :to="{ name:'dashboard'}">Dashboard</router-link></li>

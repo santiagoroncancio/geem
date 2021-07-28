@@ -26,6 +26,7 @@
 </template>
 
 <script>
+    import Vue from 'vue';
     import VuePaginate from 'vue-paginate';
     Vue.use(VuePaginate);
 
@@ -38,7 +39,7 @@
         },
         methods: {
             async listar() {
-                const ent = await axios.get('usuarios');
+                const ent = await axios.get('/api/user');
                 this.people = ent.data;
             }
         },

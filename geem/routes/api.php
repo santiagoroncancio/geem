@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -21,11 +22,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 */
 
-//Route::apiresource('/user', UserController::class); 
+Route::apiresource('/user', UserController::class); 
 
 Route::post('register', [UserController::class, 'register']);
-Route::post('login', [UserController::class, 'authenticate']);
+Route::post('login', [LoginController::class, 'authenticate']);
 
 Route::group(['middleware' => ['jwt.verify']], function(){
-    Route::post('user',[UserController::class, 'getAuthenticatedUser']);
+    Route::post('userid',[UserController::class, 'getAuthenticatedUser']);
 });
