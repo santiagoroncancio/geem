@@ -29,7 +29,7 @@
     export default {
         data() {
             return {
-                user: { email:'randommail@mail.com', password: 'strongkey123', rememberMe: false}
+                user: { email:'i@admin.com', password: '123', rememberMe: false}
             }
         },
         methods: {

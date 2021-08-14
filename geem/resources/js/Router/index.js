@@ -3,7 +3,8 @@ import routes from './route';
 
 const router = new VueRouter({
     mode: "history",
-    routes
+    routes,
+    linkExactActiveClass: "active",
 });
 
 export default router;

@@ -61,8 +61,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   data: function data() {
     return {
       user: {
-        email: 'randommail@mail.com',
-        password: 'strongkey123',
+        email: 'i@admin.com',
+        password: '123',
         rememberMe: false
       }
     };

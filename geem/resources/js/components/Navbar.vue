@@ -1,12 +1,11 @@
 <template>
-    <nav class="navBar">
-        <ul class="navBar__link">
-            <li><router-link :to="{name: 'login'}">Login</router-link></li>
-            <li><router-link :to="{ name:'home'}">Home</router-link></li>
-            <li><router-link :to="{ name:'user'}">User</router-link></li>
-            <li><router-link :to="{ name:'dashboard'}">Dashboard</router-link></li>
-        </ul>
-    </nav>
+    <div class="navbar-nav">
+        <router-link :to="{name: 'support'}" class="nav-link">Ayuda</router-link>
+        <router-link :to="{name: 'login'}" class="nav-link">Iniciar sesión</router-link>
+        <router-link :to="{ name:'home'}" class="nav-link" >Home</router-link>
+        <router-link :to="{ name:'user'}" class="nav-link">User</router-link>
+        <router-link :to="{ name:'dashboard'}" class="nav-link">Dashboard</router-link>
+    </div>
 </template>
 
 <script>

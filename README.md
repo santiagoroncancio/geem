@@ -8,6 +8,7 @@ To run the platform it is necessary to execute the commands
 - Create the ".env" file
 - php artisan migrate
 - php artisan serve
+- php artisan jwt:secret
 
 ** If you get the server error 500 **
 - php artisan key:generate
